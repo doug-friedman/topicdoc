@@ -7,7 +7,8 @@
 topic_size(topic_model)
 }
 \arguments{
-\item{topic_model}{a fitted topic model object}
+\item{topic_model}{a fitted topic model object from one of the following:
+\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
 }
 \value{
 A vector of topic sizes with length equal to the number of topics in the fitted model
@@ -26,8 +27,11 @@ topic_size(lda)
 }
 \references{
 {
-  Jordan Boyd-Graber, David Mimno, and David Newman,2014.
-  \emph{Care and Feeding of Topic Models: Problems,Diagnostics, and Improvements.}
-  CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton,Florida.
+  Jordan Boyd-Graber, David Mimno, and David Newman, 2014.
+  \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
+  CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 }
+}
+\seealso{
+\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 }

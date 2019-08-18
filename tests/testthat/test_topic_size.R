@@ -14,3 +14,10 @@ test_that("LDA Gibbs", {
   expect_equal(topic_size(lda), c(3562.351, 3291.167, 3619.483),
                tolerance = 1e-5)
 })
+
+test_that("CTM VEM", {
+  ctm <- CTM(AssociatedPress[1:20,], method = "VEM",
+             k = 3, control = list(seed = 33))
+  expect_equal(topic_size(ctm), c(589.6001, 529.5149, 708.8850),
+               tolerance = 1e-5)
+})

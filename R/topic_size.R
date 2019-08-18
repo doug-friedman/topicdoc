@@ -2,15 +2,20 @@
 #'
 #' Calculate the size of each topic in a topic model based on the
 #' number of fractional tokens found in each topic.
-#' @param topic_model a fitted topic model object
+#'
+#' @param topic_model a fitted topic model object from one of the following:
+#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @return A vector of topic sizes with length equal to the number of topics in the fitted model
 #'
 #' @references {
-#'   Jordan Boyd-Graber, David Mimno, and David Newman,2014.
-#'   \emph{Care and Feeding of Topic Models: Problems,Diagnostics, and Improvements.}
-#'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton,Florida.
+#'   Jordan Boyd-Graber, David Mimno, and David Newman, 2014.
+#'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
+#'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
+#'
+#' @seealso
+#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @export
 #'
@@ -26,10 +31,10 @@ topic_size <- function(topic_model){
   UseMethod("topic_size")
 }
 #' @export
-topic_size.LDA <- function(topic_model){
+topic_size.TopicModel <- function(topic_model){
   beta_mat <- exp(topic_model@beta)
   # SO link for reference - https://stats.stackexchange.com/a/51750
   beta_normed <- beta_mat %*% diag(1/colSums(beta_mat))
-  rowSums(beta_normed)
+  rowSums(beta_normed, na.rm = TRUE)
 }
 
