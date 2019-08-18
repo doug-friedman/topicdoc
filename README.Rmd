@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 # topicdoc
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
 <!-- badges: end -->
 
 Like a (good) doctor, the goal of topicdoc is to help diagnose issues with your topic models through a variety of 

@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
 <!-- badges: end -->
 
 Like a (good) doctor, the goal of topicdoc is to help diagnose issues
@@ -37,25 +39,25 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1      Topic 2   
-#>  [1,] "percent"    "i"       
-#>  [2,] "oil"        "year"    
-#>  [3,] "noriega"    "police"  
-#>  [4,] "gas"        "bush"    
-#>  [5,] "official"   "campaign"
-#>  [6,] "peres"      "mrs"     
-#>  [7,] "panama"     "years"   
-#>  [8,] "million"    "get"     
-#>  [9,] "magellan"   "first"   
-#> [10,] "spacecraft" "liberace"
+#>       Topic 1    Topic 2     
+#>  [1,] "percent"  "i"         
+#>  [2,] "year"     "bush"      
+#>  [3,] "noriega"  "oil"       
+#>  [4,] "national" "peres"     
+#>  [5,] "panama"   "million"   
+#>  [6,] "rose"     "gas"       
+#>  [7,] "won"      "campaign"  
+#>  [8,] "i"        "magellan"  
+#>  [9,] "first"    "mrs"       
+#> [10,] "american" "spacecraft"
 
 # Calculate the size (or fractional number of tokens) associated with each topic
 topic_size(lda)
-#> [1] 5188.66 5284.34
+#> [1] 5404.978 5068.022
 
 # Calculate the mean token length associated with each topic
 mean_token_length(lda)
-#> [1] 6.4 4.7
+#> [1] 5.3 5.2
 ```
 
 ## Key References
