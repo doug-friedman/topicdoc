@@ -1,0 +1,14 @@
+Package: topicdoc
+Type: Package
+Title: An R package for calculating topic model diagnostics
+Version: 0.1.0
+Authors@R: person("Doug", "Friedman", email = "doug.nhp@gmail.com",
+                  role = c("aut", "cre"))
+Description: This R package provides functionality to calculate various diagnostics for different types of topic models.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 2.1.0),
+    topicmodels
+RoxygenNote: 6.1.1
