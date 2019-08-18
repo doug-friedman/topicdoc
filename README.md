@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/doug-friedman/topicdoc?branch=master&svg=true)](https://ci.appveyor.com/project/doug-friedman/topicdoc)
 [![Codecov test
 coverage](https://codecov.io/gh/doug-friedman/topicdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/doug-friedman/topicdoc?branch=master)
 <!-- badges: end -->
@@ -43,25 +45,25 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1    Topic 2  
-#>  [1,] "i"        "percent"
-#>  [2,] "police"   "oil"    
-#>  [3,] "year"     "million"
-#>  [4,] "noriega"  "gas"    
-#>  [5,] "bush"     "peres"  
-#>  [6,] "people"   "first"  
-#>  [7,] "panama"   "year"   
-#>  [8,] "campaign" "rose"   
-#>  [9,] "get"      "years"  
-#> [10,] "magellan" "rate"
+#>       Topic 1    Topic 2     
+#>  [1,] "percent"  "i"         
+#>  [2,] "year"     "noriega"   
+#>  [3,] "peres"    "bush"      
+#>  [4,] "i"        "panama"    
+#>  [5,] "police"   "gas"       
+#>  [6,] "mrs"      "campaign"  
+#>  [7,] "oil"      "magellan"  
+#>  [8,] "liberace" "spacecraft"
+#>  [9,] "museum"   "president" 
+#> [10,] "november" "first"
 
 # Calculate the size (or fractional number of tokens) associated with each topic
 topic_size(lda)
-#> [1] 5374.698 5098.302
+#> [1] 5108.209 5364.791
 
 # Calculate the mean token length associated with each topic
 mean_token_length(lda)
-#> [1] 5.3 4.7
+#> [1] 5.1 6.1
 ```
 
 ## Key References
