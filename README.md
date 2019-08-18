@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
 [![Codecov test
@@ -41,25 +43,25 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1    Topic 2     
-#>  [1,] "year"     "percent"   
-#>  [2,] "noriega"  "i"         
-#>  [3,] "peres"    "bush"      
-#>  [4,] "official" "gas"       
-#>  [5,] "panama"   "national"  
-#>  [6,] "i"        "police"    
-#>  [7,] "people"   "campaign"  
-#>  [8,] "american" "magellan"  
-#>  [9,] "offer"    "mrs"       
-#> [10,] "skins"    "spacecraft"
+#>       Topic 1    Topic 2  
+#>  [1,] "i"        "percent"
+#>  [2,] "police"   "oil"    
+#>  [3,] "year"     "million"
+#>  [4,] "noriega"  "gas"    
+#>  [5,] "bush"     "peres"  
+#>  [6,] "people"   "first"  
+#>  [7,] "panama"   "year"   
+#>  [8,] "campaign" "rose"   
+#>  [9,] "get"      "years"  
+#> [10,] "magellan" "rate"
 
 # Calculate the size (or fractional number of tokens) associated with each topic
 topic_size(lda)
-#> [1] 5252.304 5220.696
+#> [1] 5374.698 5098.302
 
 # Calculate the mean token length associated with each topic
 mean_token_length(lda)
-#> [1] 5.5 5.8
+#> [1] 5.3 4.7
 ```
 
 ## Key References
