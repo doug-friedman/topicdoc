@@ -2,3 +2,12 @@
 
 language: R
 cache: packages
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - libgsl0-dev # for topicmodels
+
+after_success:
+  - Rscript -e 'covr::codecov()'

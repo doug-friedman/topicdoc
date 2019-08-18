@@ -62,5 +62,5 @@ The following documents provide key references for the diagnostics/metrics inclu
 
 * [Jordan Boyd-Graber, David Mimno, and David Newman, 2014.
 Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.
-CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.](http://www.people.fas.harvard.edu/~airoldi/pub/books/b02.AiroldiBleiEroshevaFienberg2014HandbookMMM/Ch12_MMM2014.pdf)
+CRC Handbooks of Modern Statistical Methods. CRC Press, Boca Raton, Florida.](http://www.people.fas.harvard.edu/~airoldi/pub/books/b02.AiroldiBleiEroshevaFienberg2014HandbookMMM/Ch12_MMM2014.pdf)
 * [MALLET Topic Model Diagnostics](http://mallet.cs.umass.edu/diagnostics.php)
