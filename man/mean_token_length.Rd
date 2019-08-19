@@ -10,7 +10,8 @@ mean_token_length(topic_model, top_n_tokens = 10)
 \item{topic_model}{a fitted topic model object from one of the following:
 \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
 
-\item{top_n_tokens}{an integer indicating the number of top words to consider}
+\item{top_n_tokens}{an integer indicating the number of top words to consider,
+the default is 10}
 }
 \value{
 A vector of average token lengths with length equal to the number of topics in the fitted model

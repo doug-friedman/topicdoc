@@ -6,7 +6,8 @@
 #'
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
-#' @param top_n_tokens an integer indicating the number of top words to consider
+#' @param top_n_tokens an integer indicating the number of top words to consider,
+#' the default is 10
 #'
 #' @return A vector of average token lengths with length equal to the number of topics in the fitted model
 #'
