@@ -16,6 +16,8 @@
 #' @seealso
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
+#' @importFrom topicmodels terms
+#'
 #' @export
 #'
 #' @examples
@@ -31,7 +33,7 @@ mean_token_length <- function(topic_model, top_n_tokens = 10){
 }
 #' @export
 mean_token_length.TopicModel <- function(topic_model, top_n_tokens = 10){
-  top_terms <- topicmodels::terms(topic_model, top_n_tokens)
+  top_terms <- terms(topic_model, top_n_tokens)
   nchar_mat <- apply(top_terms, 2, nchar)
   unname(colMeans(nchar_mat))
 }
