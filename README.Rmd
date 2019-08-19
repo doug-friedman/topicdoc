@@ -36,7 +36,7 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simply use case - using the example model from `LDA` in `topicmodels`. 
+This is a simple use case - using the example model from `LDA` in `topicmodels`. 
 
 ```{r example}
 library(topicdoc)

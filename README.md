@@ -33,7 +33,7 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simply use case - using the example model from `LDA` in
+This is a simple use case - using the example model from `LDA` in
 `topicmodels`.
 
 ``` r
@@ -45,27 +45,27 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1      Topic 2   
-#>  [1,] "police"     "percent" 
-#>  [2,] "noriega"    "year"    
-#>  [3,] "i"          "bush"    
-#>  [4,] "official"   "i"       
-#>  [5,] "peres"      "gas"     
-#>  [6,] "panama"     "rose"    
-#>  [7,] "magellan"   "million" 
-#>  [8,] "mrs"        "campaign"
-#>  [9,] "spacecraft" "oil"     
-#> [10,] "ago"        "rate"
+#>       Topic 1   Topic 2     
+#>  [1,] "percent" "year"      
+#>  [2,] "police"  "i"         
+#>  [3,] "oil"     "noriega"   
+#>  [4,] "million" "bush"      
+#>  [5,] "gas"     "president" 
+#>  [6,] "peres"   "panama"    
+#>  [7,] "mrs"     "campaign"  
+#>  [8,] "i"       "magellan"  
+#>  [9,] "years"   "spacecraft"
+#> [10,] "first"   "national"
 
 # Calculate all diagnostics for each topic in the topic model
 topic_diagnostics(lda, AssociatedPress[1:20,])
 #>   topic_num topic_size mean_token_length dist_from_corpus
-#> 1         1   5338.844               5.7        0.4123790
-#> 2         2   5134.156               4.5        0.4934347
+#> 1         1   5161.138               4.5        0.4641428
+#> 2         2   5311.862               6.5        0.4320155
 
 # ...or calculate them invidually
 topic_size(lda)
-#> [1] 5338.844 5134.156
+#> [1] 5161.138 5311.862
 ```
 
 ## Key References
