@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 Like a (good) doctor, the goal of topicdoc is to help diagnose issues with your topic models through a variety of 
 different diagnostics and metrics. There are a lot of great R packages for fitting topic models, but not a lot that
-help evaluate their fit. This package seeks to fill that void with functionality that easily allow you to run those
+help evaluate their fit. This package seeks to fill that void with functions that easily allow you to run those
 diagnostics/metrics efficiently on a variety of topic models.
 
 ## Installation

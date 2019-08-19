@@ -19,7 +19,7 @@ Like a (good) doctor, the goal of topicdoc is to help diagnose issues
 with your topic models through a variety of different diagnostics and
 metrics. There are a lot of great R packages for fitting topic models,
 but not a lot that help evaluate their fit. This package seeks to fill
-that void with functionality that easily allow you to run those
+that void with functions that easily allow you to run those
 diagnostics/metrics efficiently on a variety of topic models.
 
 ## Installation
@@ -45,25 +45,25 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1    Topic 2    
-#>  [1,] "percent"  "i"        
-#>  [2,] "year"     "noriega"  
-#>  [3,] "police"   "bush"     
-#>  [4,] "oil"      "national" 
-#>  [5,] "million"  "president"
-#>  [6,] "gas"      "american" 
-#>  [7,] "peres"    "panama"   
-#>  [8,] "i"        "campaign" 
-#>  [9,] "magellan" "won"      
-#> [10,] "mrs"      "today"
+#>       Topic 1    Topic 2     
+#>  [1,] "percent"  "i"         
+#>  [2,] "oil"      "year"      
+#>  [3,] "noriega"  "police"    
+#>  [4,] "million"  "bush"      
+#>  [5,] "gas"      "campaign"  
+#>  [6,] "peres"    "get"       
+#>  [7,] "official" "magellan"  
+#>  [8,] "panama"   "mrs"       
+#>  [9,] "year"     "spacecraft"
+#> [10,] "rate"     "years"
 
 # Calculate the size (or fractional number of tokens) associated with each topic
 topic_size(lda)
-#> [1] 5208.493 5264.507
+#> [1] 5088.569 5384.431
 
 # Calculate the mean token length associated with each topic
 mean_token_length(lda)
-#> [1] 4.7 5.9
+#> [1] 5.4 5.2
 ```
 
 ## Key References
