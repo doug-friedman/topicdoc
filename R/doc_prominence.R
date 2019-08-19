@@ -40,7 +40,7 @@ doc_prominence.TopicModel <- function(topic_model, method, gamma_threshold = 0.2
   gamma_mat <- topic_model@gamma
 
   if (method == "gamma_threshold") {
-    colSums(gamma_mat > 0.2)
+    colSums(gamma_mat > gamma_threshold)
   } else {
     row_maxs <- max.col(gamma_mat, ties.method = "first")
     as.vector(table(row_maxs))
