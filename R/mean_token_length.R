@@ -1,6 +1,9 @@
 #'
 #' Calculate the average token length for each topic in a topic model
 #'
+#' Using the the N highest probability words for each topic, calculate
+#' the average token length for each topic
+#'
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #' @param top_n_tokens an integer indicating the number of top words to consider

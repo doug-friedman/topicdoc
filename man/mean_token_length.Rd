@@ -16,7 +16,8 @@ mean_token_length(topic_model, top_n_tokens = 10)
 A vector of average token lengths with length equal to the number of topics in the fitted model
 }
 \description{
-Calculate the average token length for each topic in a topic model
+Using the the N highest probability words for each topic, calculate
+the average token length for each topic
 }
 \examples{
 

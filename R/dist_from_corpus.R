@@ -1,15 +1,14 @@
 #'
-#' Calculate the distance of each topic's token distribution from the
-#' overall corpus token distribution
+#' Calculate the distance of each topic from the overall corpus token distribution
+#'
+#' The Hellinger distance between the token probabilities or betas for each topic and
+#' the overall probability for the word in the corpus is calculated.
 #'
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
-#' @param dtm_data a document-term matrix of token counts coercible to `slam_triplet_matrix`
+#' @param dtm_data a document-term matrix of token counts coercible to \code{slam_triplet_matrix}
 #' where each row is a document, each column is a token,
 #' and each entry is the frequency of the token in a given document
-#'
-#' @details The Hellinger distance between the token probabilities or betas for each topic and
-#' the overall probability for the word in the corpus is calculated.
 #'
 #' @return A vector of distances with length equal to the number of topics in the fitted model
 #'
