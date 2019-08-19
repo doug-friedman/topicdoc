@@ -5,6 +5,7 @@ Version: 0.1.0
 Authors@R: person("Doug", "Friedman", email = "doug.nhp@gmail.com",
                   role = c("aut", "cre"))
 Description: This R package provides functionality to calculate various diagnostics for different types of topic models.
+Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

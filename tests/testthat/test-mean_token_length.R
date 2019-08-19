@@ -1,20 +1,17 @@
-library(topicmodels)
-data("AssociatedPress", package = "topicmodels")
-
+# Test LDA VEM model from topicmodels
 test_that("LDA VEM", {
-  lda <- LDA(AssociatedPress[1:20,], method = "VEM",
-             k = 3, control = list(seed = 33))
-  expect_equal(mean_token_length(lda), c(5.1, 6.4, 5.3))
+  lda_vem = readRDS("test_data/test_lda_vem.RDS")
+  expect_equal(mean_token_length(lda_vem), c(5.1, 6.4, 5.3))
 })
 
+# Test LDA Gibbs model from topicmodels
 test_that("LDA Gibbs", {
-  lda <- LDA(AssociatedPress[1:20,], method = "Gibbs",
-             k = 3, control = list(seed = 33))
-  expect_equal(mean_token_length(lda), c(6.1, 5.8, 4.6))
+  lda_gibbs = readRDS("test_data/test_lda_gibbs.RDS")
+  expect_equal(mean_token_length(lda_gibbs), c(6.1, 5.8, 4.6))
 })
 
+# Test CTM VEM model from topicmodels
 test_that("CTM VEM", {
-  ctm <- CTM(AssociatedPress[1:20,], method = "VEM",
-             k = 3, control = list(seed = 33))
-  expect_equal(mean_token_length(ctm), c(5.2, 7.0, 4.6))
+  ctm_vem = readRDS("test_data/test_ctm_vem.RDS")
+  expect_equal(mean_token_length(ctm_vem), c(5.2, 7.0, 4.6))
 })
