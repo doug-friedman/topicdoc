@@ -33,7 +33,7 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a basic use case - using the example model from `LDA` in
+This is a simply use case - using the example model from `LDA` in
 `topicmodels`.
 
 ``` r
@@ -45,25 +45,27 @@ lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1    Topic 2     
-#>  [1,] "percent"  "i"         
-#>  [2,] "oil"      "year"      
-#>  [3,] "noriega"  "police"    
-#>  [4,] "million"  "bush"      
-#>  [5,] "gas"      "campaign"  
-#>  [6,] "peres"    "get"       
-#>  [7,] "official" "magellan"  
-#>  [8,] "panama"   "mrs"       
-#>  [9,] "year"     "spacecraft"
-#> [10,] "rate"     "years"
+#>       Topic 1      Topic 2   
+#>  [1,] "police"     "percent" 
+#>  [2,] "noriega"    "year"    
+#>  [3,] "i"          "bush"    
+#>  [4,] "official"   "i"       
+#>  [5,] "peres"      "gas"     
+#>  [6,] "panama"     "rose"    
+#>  [7,] "magellan"   "million" 
+#>  [8,] "mrs"        "campaign"
+#>  [9,] "spacecraft" "oil"     
+#> [10,] "ago"        "rate"
 
-# Calculate the size (or fractional number of tokens) associated with each topic
+# Calculate all diagnostics for each topic in the topic model
+topic_diagnostics(lda, AssociatedPress[1:20,])
+#>   topic_num topic_size mean_token_length dist_from_corpus
+#> 1         1   5338.844               5.7        0.4123790
+#> 2         2   5134.156               4.5        0.4934347
+
+# ...or calculate them invidually
 topic_size(lda)
-#> [1] 5088.569 5384.431
-
-# Calculate the mean token length associated with each topic
-mean_token_length(lda)
-#> [1] 5.4 5.2
+#> [1] 5338.844 5134.156
 ```
 
 ## Key References
