@@ -33,15 +33,26 @@
 #' topic_diagnostics(lda, AssociatedPress[1:20,])
 
 topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10){
-  UseMethod("topic_diagnostics")
-}
-#' @export
-topic_diagnostics.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
   data.frame(
-    topic_num = 1:topic_model@k,
+    topic_num = 1:n_topics(topic_model),
     topic_size = topic_size(topic_model),
     mean_token_length = mean_token_length(topic_model),
-    dist_from_corpus = dist_from_corpus(topic_model, dtm_data)
+    dist_from_corpus = dist_from_corpus(topic_model, dtm_data),
+    tf_df_dist = tf_df_dist(topic_model, dtm_data)
   )
 }
+
+#' Helper function to determine the number of topics in a topic model
+#'
+#' @param topic_model a fitted topic model object from one of the following:
+#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#'
+#' @return an integer indicating the number of topics in the topic model
+
+n_topics <- function(topic_model){
+  if (inherits(topic_model, "TopicModel")) {
+    topic_model@k
+  }
+}
+
 

@@ -22,7 +22,7 @@
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @importFrom topicmodels distHellinger
-#' @importFrom slam col_sums
+#' @importFrom slam col_sums as.simple_triplet_matrix
 #'
 #' @export
 #'
@@ -40,6 +40,7 @@ dist_from_corpus <- function(topic_model, dtm_data){
 #' @export
 dist_from_corpus.TopicModel <- function(topic_model, dtm_data){
   beta_mat <- exp(topic_model@beta)
+  dtm_data <- as.simple_triplet_matrix(dtm_data)
 
   global_tf_counts <- col_sums(dtm_data, na.rm = TRUE)
   corpus_dist <- global_tf_counts/sum(global_tf_counts)

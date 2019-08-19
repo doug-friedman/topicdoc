@@ -1,7 +1,7 @@
 #'
 #' Calculate the average token length for each topic in a topic model
 #'
-#' Using the the N highest probability words for each topic, calculate
+#' Using the the N highest probability tokens for each topic, calculate
 #' the average token length for each topic
 #'
 #' @param topic_model a fitted topic model object from one of the following:
