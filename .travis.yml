@@ -9,5 +9,8 @@ addons:
     packages:
       - libgsl0-dev # for topicmodels
 
+r-packages:
+  - covr
+
 after_success:
   - Rscript -e 'covr::codecov()'

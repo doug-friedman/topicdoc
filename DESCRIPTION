@@ -14,5 +14,4 @@ Imports:
     topicmodels,
     slam
 Suggests: 
-    testthat (>= 2.1.0),
-    covr
+    testthat (>= 2.1.0)
