@@ -37,7 +37,10 @@
 #' topic_diagnostics(lda, AssociatedPress[1:20,], method = "largest_gamma")
 
 topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
-                              method, gamma_threshold = 0.2){
+                              method = c("gamma_threshold", "largest_gamma"),
+                              gamma_threshold = 0.2){
+  method <- match.arg(method)
+
   data.frame(
     topic_num = 1:n_topics(topic_model),
     topic_size = topic_size(topic_model),

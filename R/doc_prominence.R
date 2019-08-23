@@ -32,12 +32,15 @@
 #' lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
 #' doc_prominence(lda, "largest_gamma")
 
-doc_prominence <- function(topic_model, method, gamma_threshold = 0.2){
+doc_prominence <- function(topic_model, method = c("gamma_threshold", "largest_gamma"),
+                           gamma_threshold = 0.2){
   UseMethod("doc_prominence")
 }
 #' @export
-doc_prominence.TopicModel <- function(topic_model, method, gamma_threshold = 0.2){
+doc_prominence.TopicModel <- function(topic_model, method = c("gamma_threshold", "largest_gamma"),
+                                      gamma_threshold = 0.2){
   gamma_mat <- topic_model@gamma
+  method <- match.arg(method)
 
   if (method == "gamma_threshold") {
     colSums(gamma_mat > gamma_threshold)

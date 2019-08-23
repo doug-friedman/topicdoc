@@ -4,7 +4,8 @@
 \alias{topic_diagnostics}
 \title{Calculate diagnostics for each topic in a topic model}
 \usage{
-topic_diagnostics(topic_model, dtm_data, top_n_tokens = 10, method,
+topic_diagnostics(topic_model, dtm_data, top_n_tokens = 10,
+  method = c("gamma_threshold", "largest_gamma"),
   gamma_threshold = 0.2)
 }
 \arguments{
