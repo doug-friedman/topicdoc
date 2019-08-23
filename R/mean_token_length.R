@@ -5,7 +5,7 @@
 #' the average token length for each topic
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #' @param top_n_tokens an integer indicating the number of top words to consider,
 #' the default is 10
 #'
@@ -16,9 +16,6 @@
 #'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
 #'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
-#'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @importFrom topicmodels terms
 #'

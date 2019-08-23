@@ -8,7 +8,7 @@ tf_df_dist(topic_model, dtm_data, top_n_tokens = 10)
 }
 \arguments{
 \item{topic_model}{a fitted topic model object from one of the following:
-\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
+\code{\link[topicmodels]{tm-class}}}
 
 \item{dtm_data}{a document-term matrix of token counts coercible to \code{simple_triplet_matrix}}
 
@@ -37,7 +37,4 @@ tf_df_dist(lda, AssociatedPress[1:20,])
   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 }
-}
-\seealso{
-\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 }

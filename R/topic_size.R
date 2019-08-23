@@ -4,7 +4,7 @@
 #' number of fractional tokens found in each topic.
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #'
 #' @return A vector of topic sizes with length equal to the number of topics in the fitted model
 #'
@@ -13,9 +13,6 @@
 #'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
 #'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
-#'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @export
 #'

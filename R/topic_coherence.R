@@ -5,7 +5,7 @@
 #' the topic coherence for each topic
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
 #' @param top_n_tokens an integer indicating the number of top words to consider,
 #' the default is 10
@@ -24,8 +24,7 @@
 #'   \url{http://mallet.cs.umass.edu.} 2002.
 #' }
 #'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' @seealso \code{\link[stm]{semanticCoherence}}
 #'
 #' @importFrom topicmodels terms
 #'

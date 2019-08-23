@@ -5,7 +5,7 @@
 #' the document frequencies
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
 #' @param top_n_tokens an integer indicating the number of top words to consider,
 #' the default is 10
@@ -17,9 +17,6 @@
 #'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
 #'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
-#'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @importFrom topicmodels terms
 #' @importFrom slam as.simple_triplet_matrix

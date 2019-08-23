@@ -5,7 +5,7 @@
 #' the overall probability for the word in the corpus is calculated.
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
 #'
 #' @return A vector of distances with length equal to the number of topics in the fitted model
@@ -15,9 +15,6 @@
 #'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
 #'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
-#'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @importFrom topicmodels distHellinger
 #' @importFrom slam col_sums as.simple_triplet_matrix
