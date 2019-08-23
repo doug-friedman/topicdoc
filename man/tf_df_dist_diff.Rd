@@ -6,10 +6,10 @@
 between the token frequencies and document frequencies
 for a specific topic's top N tokens}
 \usage{
-tf_df_dist_diff(dtm, top_terms)
+tf_df_dist_diff(dtm_data, top_terms)
 }
 \arguments{
-\item{dtm}{- the document-term matrix coericble to \code{simple_triplet_matrix}}
+\item{dtm_data}{a document-term matrix of token counts coercible to \code{simple_triplet_matrix}}
 
 \item{top_terms}{- a character vector of the top N tokens}
 }

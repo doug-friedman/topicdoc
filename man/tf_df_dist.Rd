@@ -10,9 +10,7 @@ tf_df_dist(topic_model, dtm_data, top_n_tokens = 10)
 \item{topic_model}{a fitted topic model object from one of the following:
 \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
 
-\item{dtm_data}{a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
-where each row is a document, each column is a token,
-and each entry is the frequency of the token in a given document}
+\item{dtm_data}{a document-term matrix of token counts coercible to \code{simple_triplet_matrix}}
 
 \item{top_n_tokens}{an integer indicating the number of top words to consider,
 the default is 10}

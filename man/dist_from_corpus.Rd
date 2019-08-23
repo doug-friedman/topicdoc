@@ -10,9 +10,7 @@ dist_from_corpus(topic_model, dtm_data)
 \item{topic_model}{a fitted topic model object from one of the following:
 \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
 
-\item{dtm_data}{a document-term matrix of token counts coercible to \code{slam_triplet_matrix}
-where each row is a document, each column is a token,
-and each entry is the frequency of the token in a given document}
+\item{dtm_data}{a document-term matrix of token counts coercible to \code{simple_triplet_matrix}}
 }
 \value{
 A vector of distances with length equal to the number of topics in the fitted model

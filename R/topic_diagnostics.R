@@ -47,7 +47,8 @@ topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
     mean_token_length = mean_token_length(topic_model),
     dist_from_corpus = dist_from_corpus(topic_model, dtm_data),
     tf_df_dist = tf_df_dist(topic_model, dtm_data),
-    doc_prominence = doc_prominence(topic_model, method, gamma_threshold)
+    doc_prominence = doc_prominence(topic_model, method, gamma_threshold),
+    topic_coherence = topic_coherence(topic_model, dtm_data, top_n_tokens = 10)
   )
 }
 

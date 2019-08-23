@@ -7,8 +7,6 @@
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
-#' where each row is a document, each column is a token,
-#' and each entry is the frequency of the token in a given document
 #' @param top_n_tokens an integer indicating the number of top words to consider,
 #' the default is 10
 #'
@@ -43,7 +41,7 @@ tf_df_dist <- function(topic_model, dtm_data, top_n_tokens = 10){
 tf_df_dist.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
   top_terms <- terms(topic_model, top_n_tokens)
   dtm_data <- as.simple_triplet_matrix(dtm_data)
-  unname(apply(top_terms, 2, tf_df_dist_diff, dtm = dtm_data))
+  unname(apply(top_terms, 2, tf_df_dist_diff, dtm_data = dtm_data))
 }
 
 
@@ -52,16 +50,16 @@ tf_df_dist.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
 #' between the token frequencies and document frequencies
 #' for a specific topic's top N tokens
 #'
-#' @param dtm - the document-term matrix coericble to \code{simple_triplet_matrix}
+#' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
 #' @param top_terms - a character vector of the top N tokens
 #'
 #' @importFrom slam col_sums
 #'
 #' @return a single value representing the Hellinger distance
 
-tf_df_dist_diff <- function(dtm, top_terms){
-  top_terms_inds <- which(colnames(dtm) %in% top_terms)
-  rel_dtm <- dtm[,top_terms_inds]
+tf_df_dist_diff <- function(dtm_data, top_terms){
+  top_terms_inds <- which(colnames(dtm_data) %in% top_terms)
+  rel_dtm <- dtm_data[,top_terms_inds]
   tf_counts <- col_sums(rel_dtm)
   df_counts <- col_sums(rel_dtm > 0)
   distHellinger(matrix(tf_counts, nrow = 1),
