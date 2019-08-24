@@ -34,11 +34,19 @@ dist_from_corpus <- function(topic_model, dtm_data){
 }
 #' @export
 dist_from_corpus.TopicModel <- function(topic_model, dtm_data){
+  # Obtain the beta matrix from the topicmodel object
   beta_mat <- exp(topic_model@beta)
+
+  # Coerce dtm to slam format
   dtm_data <- as.simple_triplet_matrix(dtm_data)
 
+  # Calculate token frequency across all documents
   global_tf_counts <- col_sums(dtm_data, na.rm = TRUE)
+
+  # Get corpus-level probability of each token's occurence
   corpus_dist <- global_tf_counts/sum(global_tf_counts)
 
+  # Using the Hellinger distance, calculate the distance
+  # of each topic's token distribution from the corpus distribution
   distHellinger(beta_mat, matrix(corpus_dist, nrow = 1))[,1]
 }

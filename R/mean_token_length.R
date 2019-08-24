@@ -34,7 +34,12 @@ mean_token_length <- function(topic_model, top_n_tokens = 10){
 }
 #' @export
 mean_token_length.TopicModel <- function(topic_model, top_n_tokens = 10){
+  # Obtain the top terms from the topicmodel object
   top_terms <- terms(topic_model, top_n_tokens)
+
+  # Calculate the number of characters per token in each topic
   nchar_mat <- apply(top_terms, 2, nchar)
+
+  # Calculate the averages for each topic
   unname(colMeans(nchar_mat))
 }

@@ -36,8 +36,10 @@
 topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
                               method = c("gamma_threshold", "largest_gamma"),
                               gamma_threshold = 0.2){
+  # Ensure the user passed a valid method argument
   method <- match.arg(method)
 
+  # Create a data frame with all of the diagnostics in the package
   data.frame(
     topic_num = 1:n_topics(topic_model),
     topic_size = topic_size(topic_model),

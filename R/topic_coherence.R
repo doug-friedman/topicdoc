@@ -77,6 +77,7 @@ coherence <- function(dtm_data, top_terms, smoothing_beta){
   # Calculate document frequencies for each term and all of its co-occurences
   cooc_mat <- tcrossprod_simple_triplet_matrix(t(df_dtm))
 
+  # Quickly get the number of top terms for the for-loop below
   top_n_tokens <- length(top_terms)
 
   # Using the syntax from the paper, calculate coherence

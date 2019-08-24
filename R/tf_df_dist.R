@@ -36,8 +36,13 @@ tf_df_dist <- function(topic_model, dtm_data, top_n_tokens = 10){
 }
 #' @export
 tf_df_dist.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
+  # Obtain the top terms from the topicmodel object
   top_terms <- terms(topic_model, top_n_tokens)
+
+  # Coerce dtm to slam format
   dtm_data <- as.simple_triplet_matrix(dtm_data)
+
+  # Calculate distance b/w token frequency/document frequency for each topic
   unname(apply(top_terms, 2, tf_df_dist_diff, dtm_data = dtm_data))
 }
 
@@ -55,10 +60,18 @@ tf_df_dist.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
 #' @return a single value representing the Hellinger distance
 
 tf_df_dist_diff <- function(dtm_data, top_terms){
+  # Obtain the indicies of the top terms in the dtm
+  # and select only those
   top_terms_inds <- which(colnames(dtm_data) %in% top_terms)
   rel_dtm <- dtm_data[,top_terms_inds]
+
+  # Calculate the token frequencies and document frequencies
+  # using slam to keep things sparse
   tf_counts <- col_sums(rel_dtm)
   df_counts <- col_sums(rel_dtm > 0)
+
+  # Using the Hellinger distance, calculate the distance
+  # of each topic's token frequencies from its document frequencies
   distHellinger(matrix(tf_counts, nrow = 1),
                 matrix(df_counts, nrow = 1))
 }

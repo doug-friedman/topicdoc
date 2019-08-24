@@ -36,13 +36,21 @@ doc_prominence <- function(topic_model, method = c("gamma_threshold", "largest_g
 #' @export
 doc_prominence.TopicModel <- function(topic_model, method = c("gamma_threshold", "largest_gamma"),
                                       gamma_threshold = 0.2){
-  gamma_mat <- topic_model@gamma
+  # Ensure the user passed a valid method argument
   method <- match.arg(method)
 
+  # Obtain the gamma matrix from the topicmodel object
+  gamma_mat <- topic_model@gamma
+
+
   if (method == "gamma_threshold") {
+    # Count the number of documents per topic that exceed the gamma threshold
     colSums(gamma_mat > gamma_threshold)
   } else {
+    # Find the topic with the largest gamma per document
     row_maxs <- max.col(gamma_mat, ties.method = "first")
+
+    # Sum up the results
     as.vector(table(row_maxs))
   }
 }

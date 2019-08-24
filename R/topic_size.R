@@ -29,9 +29,13 @@ topic_size <- function(topic_model){
 }
 #' @export
 topic_size.TopicModel <- function(topic_model){
+  # Obtain the beta matrix from the topicmodel object
   beta_mat <- exp(topic_model@beta)
+  # Normalize the beta values within each topic
   # SO link for reference - https://stats.stackexchange.com/a/51750
   beta_normed <- beta_mat %*% diag(1/colSums(beta_mat))
+
+  # Sum the partial tokens per topic
   rowSums(beta_normed, na.rm = TRUE)
 }
 

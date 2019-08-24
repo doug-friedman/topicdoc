@@ -40,23 +40,33 @@ topic_exclusivity <- function(topic_model, top_n_tokens = 10,
 #' @export
 topic_exclusivity.TopicModel <- function(topic_model, top_n_tokens = 10,
                                          excl_weight = 0.5){
+  # Obtain the beta matrix from the topicmodel object
   beta_mat <- exp(topic_model@beta)
+
+  # Normalize the beta values within each topic
+  # SO link for reference - https://stats.stackexchange.com/a/51750
   beta_normed <- beta_mat %*% diag(1/colSums(beta_mat))
 
+  # Calculate exclusivity (using approx ECDF)
   excls <- apply(beta_normed, 1, rank)/ncol(beta_normed)
 
+  # Calculate frequency (using approx ECDF)
   freqs <- apply(beta_mat, 1, rank)/ncol(beta_mat)
 
+  # Obtain the indicies of the top terms in the model
+  # and select only those from the exclusivity and frequency matrices
   top_terms <- terms(topic_model, top_n_tokens)
   term_inds <- which(topic_model@terms %in% top_terms[,1])
 
   excls <- excls[term_inds,]
   freqs <- freqs[term_inds,]
 
+  # Calculate frex score using the provided exclusivity weight
   excl_term <- excl_weight / excls
   freq_term <- (1 - excl_weight) / freqs
   frex <- 1 / (excl_term + freq_term)
 
+  # Calculate total frex score per topic
   apply(frex, 2, sum)
 }
 
