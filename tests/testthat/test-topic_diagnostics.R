@@ -15,4 +15,6 @@ test_that("LDA VEM", {
   expect_equal(diag_df$dist_from_corpus, dist_from_corpus(lda_vem, AssociatedPress[1:20,]))
   expect_equal(diag_df$tf_df_dist, tf_df_dist(lda_vem, AssociatedPress[1:20,]))
   expect_equal(diag_df$doc_prominence, doc_prominence(lda_vem, "largest_gamma"))
+  expect_equal(diag_df$topic_coherence, topic_coherence(lda_vem, AssociatedPress[1:20,]))
+  expect_equal(diag_df$topic_exclusivity, topic_exclusivity(lda_vem))
 })
