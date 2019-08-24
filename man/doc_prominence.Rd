@@ -12,7 +12,7 @@ doc_prominence(topic_model, method = c("gamma_threshold",
 \code{\link[topicmodels]{tm-class}}}
 
 \item{method}{a string indicating which method to use -
-"gamma_threshold" or "largest_gamma"}
+"gamma_threshold" or "largest_gamma", the default is "gamma_threshold"}
 
 \item{gamma_threshold}{a number between 0 and 1 indicating the gamma threshold to be used
 when using the gamma threshold method, the default is 0.2}
@@ -31,7 +31,7 @@ the number of documents where a topic has the highest estimated gamma probabilit
 library(topicmodels)
 data("AssociatedPress", package = "topicmodels")
 lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
-doc_prominence(lda, "largest_gamma")
+doc_prominence(lda)
 }
 \references{
 {

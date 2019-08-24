@@ -37,7 +37,7 @@ Generate a dataframe containing the diagnostics for each topic in a topic model
 library(topicmodels)
 data("AssociatedPress", package = "topicmodels")
 lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
-topic_diagnostics(lda, AssociatedPress[1:20,], method = "largest_gamma")
+topic_diagnostics(lda, AssociatedPress[1:20,])
 }
 \references{
 {

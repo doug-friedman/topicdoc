@@ -7,7 +7,7 @@
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{tm-class}}
 #' @param method a string indicating which method to use -
-#' "gamma_threshold" or "largest_gamma"
+#' "gamma_threshold" or "largest_gamma", the default is "gamma_threshold"
 #' @param gamma_threshold a number between 0 and 1 indicating the gamma threshold to be used
 #' when using the gamma threshold method, the default is 0.2
 #'
@@ -27,7 +27,7 @@
 #' library(topicmodels)
 #' data("AssociatedPress", package = "topicmodels")
 #' lda <- LDA(AssociatedPress[1:20,], control = list(alpha = 0.1), k = 2)
-#' doc_prominence(lda, "largest_gamma")
+#' doc_prominence(lda)
 
 doc_prominence <- function(topic_model, method = c("gamma_threshold", "largest_gamma"),
                            gamma_threshold = 0.2){

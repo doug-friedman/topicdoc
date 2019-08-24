@@ -50,7 +50,7 @@ lda <- LDA(AssociatedPress[1:20,],
 terms(lda, 10)
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:20,], method = "largest_gamma")
+topic_diagnostics(lda, AssociatedPress[1:20,])
 
 # ...or calculate them individually
 topic_size(lda)

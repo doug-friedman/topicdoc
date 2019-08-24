@@ -46,30 +46,30 @@ lda <- LDA(AssociatedPress[1:20,],
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1    Topic 2   
-#>  [1,] "percent"  "i"       
-#>  [2,] "police"   "year"    
-#>  [3,] "first"    "noriega" 
-#>  [4,] "gas"      "bush"    
-#>  [5,] "year"     "official"
-#>  [6,] "years"    "peres"   
-#>  [7,] "oil"      "panama"  
-#>  [8,] "national" "made"    
-#>  [9,] "mrs"      "campaign"
-#> [10,] "i"        "magellan"
+#>       Topic 1     Topic 2     
+#>  [1,] "i"         "percent"   
+#>  [2,] "noriega"   "year"      
+#>  [3,] "bush"      "peres"     
+#>  [4,] "american"  "rose"      
+#>  [5,] "panama"    "magellan"  
+#>  [6,] "president" "spacecraft"
+#>  [7,] "campaign"  "won"       
+#>  [8,] "gas"       "contact"   
+#>  [9,] "million"   "national"  
+#> [10,] "mrs"       "november"
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:20,], method = "largest_gamma")
+topic_diagnostics(lda, AssociatedPress[1:20,])
 #>   topic_num topic_size mean_token_length dist_from_corpus tf_df_dist
-#> 1         1   5155.749               4.5        0.4874270   4.957302
-#> 2         2   5317.251               5.5        0.4192147   5.318954
-#>   doc_prominence topic_coherence
-#> 1             10       -41.00297
-#> 2             10       -22.46953
+#> 1         1    5288.51               5.6        0.4320950   5.075092
+#> 2         2    5184.49               6.4        0.4521169   4.920845
+#>   doc_prominence topic_coherence topic_exclusivity
+#> 1             10       -32.03121          9.730043
+#> 2             10       -39.75965          0.841754
 
 # ...or calculate them individually
 topic_size(lda)
-#> [1] 5155.749 5317.251
+#> [1] 5288.51 5184.49
 ```
 
 ## Key References
