@@ -53,7 +53,7 @@ topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
 #' Helper function to determine the number of topics in a topic model
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #'
 #' @return an integer indicating the number of topics in the topic model
 

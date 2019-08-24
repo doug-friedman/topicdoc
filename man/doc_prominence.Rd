@@ -9,7 +9,7 @@ doc_prominence(topic_model, method = c("gamma_threshold",
 }
 \arguments{
 \item{topic_model}{a fitted topic model object from one of the following:
-\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}}
+\code{\link[topicmodels]{tm-class}}}
 
 \item{method}{a string indicating which method to use -
 "gamma_threshold" or "largest_gamma"}
@@ -39,7 +39,4 @@ doc_prominence(lda, "largest_gamma")
   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 }
-}
-\seealso{
-\code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 }

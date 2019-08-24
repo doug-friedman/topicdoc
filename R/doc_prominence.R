@@ -5,7 +5,7 @@
 #' the number of documents where a topic has the highest estimated gamma probability
 #'
 #' @param topic_model a fitted topic model object from one of the following:
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
+#' \code{\link[topicmodels]{tm-class}}
 #' @param method a string indicating which method to use -
 #' "gamma_threshold" or "largest_gamma"
 #' @param gamma_threshold a number between 0 and 1 indicating the gamma threshold to be used
@@ -18,9 +18,6 @@
 #'   \emph{Care and Feeding of Topic Models: Problems, Diagnostics, and Improvements.}
 #'   CRC Handbooks ofModern Statistical Methods. CRC Press, Boca Raton, Florida.
 #' }
-#'
-#' @seealso
-#' \code{\link[topicmodels]{LDA}}, \code{\link[topicmodels]{CTM}}
 #'
 #' @export
 #'
