@@ -59,8 +59,11 @@ diag_df
 
 # ...or calculate them individually
 topic_size(lda_ap4)
+```
 
-# It's a lot easier to see it all together though...
+It's a lot easier to interpret the output if you put it all together in a nice plot.
+
+```{r example_plot, dpi=300, fig.width=10}
 diag_df <- diag_df %>%
   mutate(topic_label = terms(lda_ap4, 5) %>%
            apply(2, paste, collapse = ", "),
@@ -81,6 +84,8 @@ These diagnostics help provide a more rigorous confirmation of our intuition abo
 Almost, immediately you'd deduce that Topic 1 looks odd as it contains a lot of generic words (e.g. "two", "three", "like"). Using the diagnostics provided, you can see that Topic 1 has the largest topic size and highest document prominence indicating that it's incorporating many more tokens and documents than the others. The low TF/DF distance and exclusivity confirm our susipicion about the generic nature of the topic.
 
 Alternatively, you can see that Topic 2 - the one centered around financial news - is the most coherent and exclusive topic.
+
+
 
 ## Diagnostics/Metrics Included
 | Diagnostic/Metric                               |      Function       |  Description                                |

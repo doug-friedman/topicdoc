@@ -79,8 +79,12 @@ diag_df
 # ...or calculate them individually
 topic_size(lda_ap4)
 #> [1] 3476.377 1910.153 2504.622 2581.848
+```
 
-# It's a lot easier to see it all together though...
+It’s a lot easier to interpret the output if you put it all together in
+a nice plot.
+
+``` r
 diag_df <- diag_df %>%
   mutate(topic_label = terms(lda_ap4, 5) %>%
            apply(2, paste, collapse = ", "),
@@ -96,7 +100,7 @@ diag_df %>%
        fill = "Topic Label", title = "All Topic Model Diagnostics")
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example_plot-1.png" width="100%" />
 
 These diagnostics help provide a more rigorous confirmation of our
 intuition about identifying “good” versus “bad” topics in a topic model.
