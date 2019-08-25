@@ -44,7 +44,7 @@ data("AssociatedPress", package = "topicmodels")
 lda <- LDA(AssociatedPress[1:100,], 
            control = list(seed = 33), k = 4)
 
-# See the top 10 terms associated with each of the two topics
+# See the top 10 terms associated with each of the topics
 terms(lda, 10)
 #>       Topic 1  Topic 2   Topic 3     Topic 4         
 #>  [1,] "people" "percent" "company"   "soviet"        
