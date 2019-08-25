@@ -22,6 +22,9 @@ but not a lot that help evaluate their fit. This package seeks to fill
 that void with functions that easily allow you to run those
 diagnostics/metrics efficiently on a variety of topic models.
 
+Currently, only topic models from the `topicmodels` library are
+supported. However, I’m targeting those from the `stm` library next.
+
 ## Installation
 
 You can install the development version of topicdoc from
