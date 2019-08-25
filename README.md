@@ -76,6 +76,18 @@ topic_size(lda)
 #> [1] 2700.333 2595.014 2479.574 2698.079
 ```
 
+## Metrics Included
+
+|                     Metric                      |      Function       |                                      Description                                       |
+| :---------------------------------------------: | :-----------------: | :------------------------------------------------------------------------------------: |
+|                   topic size                    |    `topic_size`     |                      Total (weighted) number of tokens per topic                       |
+|                mean token length                | `mean_token_length` |               Average number of characters for the top tokens per topic                |
+|        distance from corpus distribution        | `dist_from_corpus`  |  Distance of a topic’s token distribution from the overall corpus token distribution   |
+| distance between token and document frequencies |    `tf_df_dist`     |              Distance between a topic’s token and document distributions               |
+|               document prominence               |  `doc_prominence`   |                    Number of unique documents where a topic appears                    |
+|                 topic coherence                 |  `topic_coherence`  | Measure of how often the top tokens in each topic appear together in the same document |
+|                topic exclusivity                | `topic_exclusivity` |  Measure of how unique the top tokens in each topic are compared to the other topics   |
+
 ## Key References
 
 The following documents provide key references for the
