@@ -36,21 +36,21 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simple use case - using the example model from `LDA` in `topicmodels`. 
+This is a simple use case - using an LDA model with 1992 Associated Press Dataset in `topicmodels`. 
 
 ```{r example}
 library(topicdoc)
 library(topicmodels)
 
 data("AssociatedPress", package = "topicmodels")
-lda <- LDA(AssociatedPress[1:20,], 
-           control = list(alpha = 0.1), k = 2)
+lda <- LDA(AssociatedPress[1:100,], 
+           control = list(seed = 33), k = 4)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:20,])
+topic_diagnostics(lda, AssociatedPress[1:100,])
 
 # ...or calculate them individually
 topic_size(lda)

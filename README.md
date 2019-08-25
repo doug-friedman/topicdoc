@@ -33,43 +33,47 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simple use case - using the example model from `LDA` in
-`topicmodels`.
+This is a simple use case - using an LDA model with 1992 Associated
+Press Dataset in `topicmodels`.
 
 ``` r
 library(topicdoc)
 library(topicmodels)
 
 data("AssociatedPress", package = "topicmodels")
-lda <- LDA(AssociatedPress[1:20,], 
-           control = list(alpha = 0.1), k = 2)
+lda <- LDA(AssociatedPress[1:100,], 
+           control = list(seed = 33), k = 4)
 
 # See the top 10 terms associated with each of the two topics
 terms(lda, 10)
-#>       Topic 1     Topic 2     
-#>  [1,] "i"         "percent"   
-#>  [2,] "noriega"   "year"      
-#>  [3,] "bush"      "peres"     
-#>  [4,] "american"  "rose"      
-#>  [5,] "panama"    "magellan"  
-#>  [6,] "president" "spacecraft"
-#>  [7,] "campaign"  "won"       
-#>  [8,] "gas"       "contact"   
-#>  [9,] "million"   "national"  
-#> [10,] "mrs"       "november"
+#>       Topic 1  Topic 2   Topic 3     Topic 4         
+#>  [1,] "people" "percent" "company"   "soviet"        
+#>  [2,] "i"      "new"     "bush"      "i"             
+#>  [3,] "police" "year"    "new"       "government"    
+#>  [4,] "new"    "prices"  "bank"      "people"        
+#>  [5,] "city"   "state"   "campaign"  "official"      
+#>  [6,] "school" "economy" "percent"   "administration"
+#>  [7,] "last"   "two"     "president" "officials"     
+#>  [8,] "two"    "rate"    "i"         "year"          
+#>  [9,] "years"  "soviet"  "year"      "new"           
+#> [10,] "year"   "states"  "rating"    "president"
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:20,])
+topic_diagnostics(lda, AssociatedPress[1:100,])
 #>   topic_num topic_size mean_token_length dist_from_corpus tf_df_dist
-#> 1         1    5288.51               5.6        0.4320950   5.075092
-#> 2         2    5184.49               6.4        0.4521169   4.920845
+#> 1         1   2700.333               4.2        0.5087536   6.503498
+#> 2         2   2595.014               5.1        0.4959252   7.512216
+#> 3         3   2479.574               5.3        0.5436225   8.368090
+#> 4         4   2698.079               7.0        0.4784405   7.097708
 #>   doc_prominence topic_coherence topic_exclusivity
-#> 1             10       -32.03121          9.730043
-#> 2             10       -39.75965          0.841754
+#> 1             26       -75.45836          8.414308
+#> 2             30       -89.90897          9.397756
+#> 3             22       -96.63925          8.185546
+#> 4             25       -69.38898          8.345118
 
 # ...or calculate them individually
 topic_size(lda)
-#> [1] 5288.51 5184.49
+#> [1] 2700.333 2595.014 2479.574 2698.079
 ```
 
 ## Key References

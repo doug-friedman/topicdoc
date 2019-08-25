@@ -56,17 +56,22 @@ topic_exclusivity.TopicModel <- function(topic_model, top_n_tokens = 10,
   # Obtain the indicies of the top terms in the model
   # and select only those from the exclusivity and frequency matrices
   top_terms <- terms(topic_model, top_n_tokens)
-  term_inds <- which(topic_model@terms %in% top_terms[,1])
 
-  excls <- excls[term_inds,]
-  freqs <- freqs[term_inds,]
+  # Create an empty vector for the frex scores
+  frex <- vector(length = ncol(freqs))
 
-  # Calculate frex score using the provided exclusivity weight
-  excl_term <- excl_weight / excls
-  freq_term <- (1 - excl_weight) / freqs
-  frex <- 1 / (excl_term + freq_term)
+  # Loop through each topic's terms and calculate its total frex score
+  for (i in 1:ncol(freqs)) {
+    # Identifying and selecting rows for this topic's terms
+    term_inds <- which(topic_model@terms %in% top_terms[,i])
+    this_excls <- excls[term_inds, i]
+    this_freqs <- freqs[term_inds, i]
 
-  # Calculate total frex score per topic
-  apply(frex, 2, sum)
+    # Calculate frex score using the provided exclusivity weight
+    excl_term <- excl_weight / this_excls
+    freq_term <- (1 - excl_weight) / this_freqs
+    frex[i] <- sum(1 / (excl_term + freq_term))
+  }
+
+  frex
 }
-
