@@ -36,28 +36,54 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simple use case - using an LDA model with 1992 Associated Press Dataset in `topicmodels`. 
+This is a simple use case - using an LDA model with the Associated Press Dataset in `topicmodels` which is made up of AP articles from 1988.
 
 ```{r example}
 library(topicdoc)
 library(topicmodels)
+library(ggplot2)
+library(dplyr, warn.conflicts = F)
+library(tidyr)
+library(stringr)
 
-data("AssociatedPress", package = "topicmodels")
-lda <- LDA(AssociatedPress[1:100,], 
-           control = list(seed = 33), k = 4)
+data("AssociatedPress")
+lda_ap4 <- LDA(AssociatedPress,
+               control = list(seed = 33), k = 4)
 
 # See the top 10 terms associated with each of the topics
-terms(lda, 10)
+terms(lda_ap4, 10)
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:100,])
+diag_df <- topic_diagnostics(lda_ap4, AssociatedPress)
+diag_df
 
 # ...or calculate them individually
-topic_size(lda)
+topic_size(lda_ap4)
+
+# It's a lot easier to see it all together though...
+diag_df <- diag_df %>%
+  mutate(topic_label = terms(lda_ap4, 5) %>%
+           apply(2, paste, collapse = ", "),
+         topic_label = paste(topic_num, topic_label, sep = " - "))
+
+diag_df %>% 
+  gather(diagnostic, value, -topic_label, -topic_num) %>%
+  ggplot(aes(x = topic_num, y = value,
+             fill = str_wrap(topic_label, 25))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~diagnostic, scales = "free") +
+  labs(x = "Topic Number", y = "Diagnostic Value",
+       fill = "Topic Label", title = "All Topic Model Diagnostics")
 ```
 
-## Metrics Included
-| Metric                                          |      Function       |  Description                                |
+These diagnostics help provide a more rigorous confirmation of our intuition about identifying "good" versus "bad" topics in a topic model.
+
+Almost, immediately you'd deduce that Topic 1 looks odd as it contains a lot of generic words (e.g. "two", "three", "like"). Using the diagnostics provided, you can see that Topic 1 has the largest topic size and highest document prominence indicating that it's incorporating many more tokens and documents than the others. The low TF/DF distance and exclusivity confirm our susipicion about the generic nature of the topic.
+
+Alternatively, you can see that Topic 2 - the one centered around financial news - is the most coherent and exclusive topic.
+
+## Diagnostics/Metrics Included
+| Diagnostic/Metric                               |      Function       |  Description                                |
 |:-----------------------------------------------:|:-------------------:|:-------------------------------------------:|
 | topic size                                      | `topic_size`        | Total (weighted) number of tokens per topic |
 | mean token length                               | `mean_token_length` | Average number of characters for the top tokens per topic |

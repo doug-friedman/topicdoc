@@ -33,52 +33,89 @@ remotes::install.packages("doug-friedman/topicdoc")
 
 ## Example
 
-This is a simple use case - using an LDA model with 1992 Associated
-Press Dataset in `topicmodels`.
+This is a simple use case - using an LDA model with the Associated Press
+Dataset in `topicmodels` which is made up of AP articles from 1988.
 
 ``` r
 library(topicdoc)
 library(topicmodels)
+library(ggplot2)
+library(dplyr, warn.conflicts = F)
+library(tidyr)
+library(stringr)
 
-data("AssociatedPress", package = "topicmodels")
-lda <- LDA(AssociatedPress[1:100,], 
-           control = list(seed = 33), k = 4)
+data("AssociatedPress")
+lda_ap4 <- LDA(AssociatedPress,
+               control = list(seed = 33), k = 4)
 
 # See the top 10 terms associated with each of the topics
-terms(lda, 10)
-#>       Topic 1  Topic 2   Topic 3     Topic 4         
-#>  [1,] "people" "percent" "company"   "soviet"        
-#>  [2,] "i"      "new"     "bush"      "i"             
-#>  [3,] "police" "year"    "new"       "government"    
-#>  [4,] "new"    "prices"  "bank"      "people"        
-#>  [5,] "city"   "state"   "campaign"  "official"      
-#>  [6,] "school" "economy" "percent"   "administration"
-#>  [7,] "last"   "two"     "president" "officials"     
-#>  [8,] "two"    "rate"    "i"         "year"          
-#>  [9,] "years"  "soviet"  "year"      "new"           
-#> [10,] "year"   "states"  "rating"    "president"
+terms(lda_ap4, 10)
+#>       Topic 1  Topic 2   Topic 3     Topic 4     
+#>  [1,] "i"      "percent" "bush"      "soviet"    
+#>  [2,] "people" "million" "i"         "government"
+#>  [3,] "two"    "year"    "president" "united"    
+#>  [4,] "police" "billion" "court"     "president" 
+#>  [5,] "years"  "new"     "federal"   "people"    
+#>  [6,] "new"    "market"  "new"       "police"    
+#>  [7,] "city"   "company" "house"     "military"  
+#>  [8,] "time"   "prices"  "state"     "states"    
+#>  [9,] "three"  "stock"   "dukakis"   "party"     
+#> [10,] "like"   "last"    "campaign"  "two"
 
 # Calculate all diagnostics for each topic in the topic model
-topic_diagnostics(lda, AssociatedPress[1:100,])
+diag_df <- topic_diagnostics(lda_ap4, AssociatedPress)
+diag_df
 #>   topic_num topic_size mean_token_length dist_from_corpus tf_df_dist
-#> 1         1   2700.333               4.2        0.5087536   6.503498
-#> 2         2   2595.014               5.1        0.4959252   7.512216
-#> 3         3   2479.574               5.3        0.5436225   8.368090
-#> 4         4   2698.079               7.0        0.4784405   7.097708
+#> 1         1   3476.377               4.1        0.3899012   24.08191
+#> 2         2   1910.153               5.6        0.5044673   26.67523
+#> 3         3   2504.622               5.4        0.3830014   26.46131
+#> 4         4   2581.848               6.5        0.3988826   25.52163
 #>   doc_prominence topic_coherence topic_exclusivity
-#> 1             26       -75.45836          8.414308
-#> 2             30       -89.90897          9.397756
-#> 3             22       -96.63925          8.185546
-#> 4             25       -69.38898          8.345118
+#> 1           1053       -81.83339          7.813034
+#> 2            598       -79.50691          9.560433
+#> 3            783      -106.40062          9.162590
+#> 4            775       -84.46149          9.058854
 
 # ...or calculate them individually
-topic_size(lda)
-#> [1] 2700.333 2595.014 2479.574 2698.079
+topic_size(lda_ap4)
+#> [1] 3476.377 1910.153 2504.622 2581.848
+
+# It's a lot easier to see it all together though...
+diag_df <- diag_df %>%
+  mutate(topic_label = terms(lda_ap4, 5) %>%
+           apply(2, paste, collapse = ", "),
+         topic_label = paste(topic_num, topic_label, sep = " - "))
+
+diag_df %>% 
+  gather(diagnostic, value, -topic_label, -topic_num) %>%
+  ggplot(aes(x = topic_num, y = value,
+             fill = str_wrap(topic_label, 25))) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~diagnostic, scales = "free") +
+  labs(x = "Topic Number", y = "Diagnostic Value",
+       fill = "Topic Label", title = "All Topic Model Diagnostics")
 ```
 
-## Metrics Included
+<img src="man/figures/README-example-1.png" width="100%" />
 
-|                     Metric                      |      Function       |                                      Description                                       |
+These diagnostics help provide a more rigorous confirmation of our
+intuition about identifying “good” versus “bad” topics in a topic model.
+
+Almost, immediately you’d deduce that Topic 1 looks odd as it contains a
+lot of generic words (e.g. “two”, “three”, “like”). Using the
+diagnostics provided, you can see that Topic 1 has the largest topic
+size and highest document prominence indicating that it’s incorporating
+many more tokens and documents than the others. The low TF/DF distance
+and exclusivity confirm our susipicion about the generic nature of the
+topic.
+
+Alternatively, you can see that Topic 2 - the one centered around
+financial news - is the most coherent and exclusive
+topic.
+
+## Diagnostics/Metrics Included
+
+|                Diagnostic/Metric                |      Function       |                                      Description                                       |
 | :---------------------------------------------: | :-----------------: | :------------------------------------------------------------------------------------: |
 |                   topic size                    |    `topic_size`     |                      Total (weighted) number of tokens per topic                       |
 |                mean token length                | `mean_token_length` |               Average number of characters for the top tokens per topic                |
