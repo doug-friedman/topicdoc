@@ -34,7 +34,7 @@ topic_exclusivity(lda)
 \references{
 {
   Bischof, Jonathan, and Edoardo Airoldi. 2012.
-  "Summarizingtopical content with word frequency and exclusivity."
+  "Summarizing topical content with word frequency and exclusivity."
   In Proceedings of the 29th International Conference on Machine Learning (ICML-12),
   eds John Langford and Joelle Pineau.New York, NY: Omnipress, 201–208.
 }
