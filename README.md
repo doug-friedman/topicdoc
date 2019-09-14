@@ -31,7 +31,7 @@ You can install the development version of topicdoc from
 [Github](https://www.github.com/doug-friedman/topicdoc) with:
 
 ``` r
-remotes::install.packages("doug-friedman/topicdoc")
+remotes::install_github("doug-friedman/topicdoc")
 ```
 
 ## Example
@@ -42,10 +42,6 @@ Dataset in `topicmodels` which is made up of AP articles from 1988.
 ``` r
 library(topicdoc)
 library(topicmodels)
-library(ggplot2)
-library(dplyr, warn.conflicts = F)
-library(tidyr)
-library(stringr)
 
 data("AssociatedPress")
 lda_ap4 <- LDA(AssociatedPress,
@@ -88,6 +84,11 @@ It’s a lot easier to interpret the output if you put it all together in
 a nice plot.
 
 ``` r
+library(ggplot2)
+library(dplyr, warn.conflicts = F)
+library(tidyr)
+library(stringr)
+
 diag_df <- diag_df %>%
   mutate(topic_label = terms(lda_ap4, 5) %>%
            apply(2, paste, collapse = ", "),

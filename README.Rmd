@@ -33,7 +33,7 @@ Currently, only topic models from the `topicmodels` library are supported. Howev
 You can install the development version of topicdoc from [Github](https://www.github.com/doug-friedman/topicdoc) with:
 
 ``` r
-remotes::install.packages("doug-friedman/topicdoc")
+remotes::install_github("doug-friedman/topicdoc")
 ```
 
 ## Example
@@ -43,10 +43,6 @@ This is a simple use case - using an LDA model with the Associated Press Dataset
 ```{r example}
 library(topicdoc)
 library(topicmodels)
-library(ggplot2)
-library(dplyr, warn.conflicts = F)
-library(tidyr)
-library(stringr)
 
 data("AssociatedPress")
 lda_ap4 <- LDA(AssociatedPress,
@@ -66,6 +62,11 @@ topic_size(lda_ap4)
 It's a lot easier to interpret the output if you put it all together in a nice plot.
 
 ```{r example_plot, dpi=300, fig.width=10}
+library(ggplot2)
+library(dplyr, warn.conflicts = F)
+library(tidyr)
+library(stringr)
+
 diag_df <- diag_df %>%
   mutate(topic_label = terms(lda_ap4, 5) %>%
            apply(2, paste, collapse = ", "),
