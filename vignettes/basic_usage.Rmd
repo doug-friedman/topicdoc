@@ -1,0 +1,64 @@
+---
+title: "Basic usage"
+author: "Doug Friedman"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Basic usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+There are two ways to use the topic model diagnostics included `topicdoc`. You can calculate all the topic diagnostics at once using `topic_diagnostics` or use the other functions to calculate the diagnostics individually.
+
+The only prerequisite for using `topicdoc` is that your topic model is fit using the `topicmodels` package and that your document-term matrix (DTM) is `slam` coercible. This includes DTMs created through popular text mining packages like `tm` and `quanteda`.
+
+## Example
+For this example, the Associated Press Dataset from topicmodels is used. It contains a DTM created a series of AP articles from 1988.
+
+```{r example_setup}
+library(topicdoc)
+library(topicmodels)
+
+data("AssociatedPress")
+
+lda_ap4 <- LDA(AssociatedPress,
+               control = list(seed = 33), k = 4)
+
+# See the top 10 terms associated with each of the topics
+terms(lda_ap4, 10)
+```
+
+Here's how you would run all the diagnostics at once.
+
+```{r all_at_once}
+topic_diagnostics(lda_ap4, AssociatedPress)
+```
+
+Here's how you would run a few of them individually.
+
+```{r one_at_a_time}
+topic_size(lda_ap4)
+mean_token_length(lda_ap4)
+```
+
+## Diagnostics Included
+A full list of the diagnostics included are provided below.
+
+| Diagnostic/Metric                               |      Function       |  Description                                |
+|:-----------------------------------------------:|:-------------------:|:-------------------------------------------:|
+| topic size                                      | `topic_size`        | Total (weighted) number of tokens per topic |
+| mean token length                               | `mean_token_length` | Average number of characters for the top tokens per topic |
+| distance from corpus distribution               | `dist_from_corpus`  | Distance of a topic's token distribution from the overall corpus token distribution |
+| distance between token and document frequencies | `tf_df_dist`        | Distance between a topic's token and document distributions |
+| document prominence                             | `doc_prominence`    | Number of unique documents where a topic appears
+| topic coherence                                 | `topic_coherence`   | Measure of how often the top tokens in each topic appear together in the same document |
+| topic exclusivity                               | `topic_exclusivity` | Measure of how unique the top tokens in each topic are compared to the other topics |
