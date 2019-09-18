@@ -1,0 +1,18 @@
+destination: docs
+reference:
+  - title: "All Diagnostics"
+    desc: >
+      Function to run all topic model diagnostics
+    contents:
+      - topic_diagnostics
+  - title: "Individual Diagnostics"
+    desc: >
+      Function to run individual topic model diagnostics
+    contents:
+      - dist_from_corpus
+      - doc_prominence
+      - mean_token_length
+      - tf_df_dist
+      - topic_coherence
+      - topic_exclusivity
+      - topic_size
