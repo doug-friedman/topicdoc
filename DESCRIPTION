@@ -10,6 +10,8 @@ Authors@R:
 Description: This R package provides functionality to calculate
     various diagnostics for different types of topic models.
 License: MIT + file LICENSE
+URL: https://github.com/doug-friedman/topicdoc
+BugReports: https://github.com/doug-friedman/topicdoc/issues
 Depends: 
     R (>= 3.5.0)
 Imports:
