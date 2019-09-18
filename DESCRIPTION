@@ -1,20 +1,26 @@
-Package: topicdoc
 Type: Package
+Package: topicdoc
 Title: An R package for calculating topic model diagnostics
 Version: 0.1.0
-Authors@R: person("Doug", "Friedman", email = "doug.nhp@gmail.com",
-                  role = c("aut", "cre"))
-Description: This R package provides functionality to calculate various diagnostics for different types of topic models.
-Depends: R (>= 3.5.0)
+Authors@R: 
+    person(given = "Doug",
+           family = "Friedman",
+           role = c("aut", "cre"),
+           email = "doug.nhp@gmail.com")
+Description: This R package provides functionality to calculate
+    various diagnostics for different types of topic models.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    slam,
+    topicmodels
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0)
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Imports:
-    topicmodels,
-    slam
-Suggests: 
-    testthat (>= 2.1.0),
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
