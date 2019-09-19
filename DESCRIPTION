@@ -1,6 +1,6 @@
 Type: Package
 Package: topicdoc
-Title: An R package for calculating topic model diagnostics
+Title: An R package for calculating topic model diagnostics 
 Version: 0.1.0
 Authors@R: 
     person(given = "Doug",
