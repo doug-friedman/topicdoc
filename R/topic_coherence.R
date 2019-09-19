@@ -40,6 +40,10 @@
 
 topic_coherence <- function(topic_model, dtm_data, top_n_tokens = 10,
                             smoothing_beta = 1){
+  if (!contain_equal_docs(topic_model, dtm_data)) {
+    stop("The topic model object and document-term matrix contain an unequal number of documents.")
+  }
+
   UseMethod("topic_coherence")
 }
 #' @export

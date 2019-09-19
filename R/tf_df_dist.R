@@ -32,6 +32,10 @@
 #' tf_df_dist(lda, AssociatedPress[1:20,])
 
 tf_df_dist <- function(topic_model, dtm_data, top_n_tokens = 10){
+  if (!contain_equal_docs(topic_model, dtm_data)) {
+    stop("The topic model object and document-term matrix contain an unequal number of documents.")
+  }
+
   UseMethod("tf_df_dist")
 }
 #' @export

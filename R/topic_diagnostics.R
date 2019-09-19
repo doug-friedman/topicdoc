@@ -39,6 +39,11 @@ topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
   # Ensure the user passed a valid method argument
   method <- match.arg(method)
 
+  # Check that the model and dtm contain the same number of documents
+  if (!contain_equal_docs(topic_model, dtm_data)) {
+    stop("The topic model object and document-term matrix contain an unequal number of documents.")
+  }
+
   # Create a data frame with all of the diagnostics in the package
   data.frame(
     topic_num = 1:n_topics(topic_model),
@@ -65,4 +70,16 @@ n_topics <- function(topic_model){
   }
 }
 
+#' Helper function to check that a topic model and a dtm contain the same number of documents
+#'
+#' @param topic_model a fitted topic model object from one of the following:
+#' \code{\link[topicmodels]{tm-class}}
+#' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
+#'
+#' @return a logical indicating whether or not the two object contain the same number of documents
 
+contain_equal_docs <- function(topic_model, dtm_data){
+  if (inherits(topic_model, "TopicModel")) {
+    topic_model@Dim[1] == nrow(dtm_data)
+  }
+}

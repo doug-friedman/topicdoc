@@ -30,6 +30,11 @@
 #' dist_from_corpus(lda, AssociatedPress[1:20,])
 
 dist_from_corpus <- function(topic_model, dtm_data){
+  # Check that the model and dtm contain the same number of documents
+  if (!contain_equal_docs(topic_model, dtm_data)) {
+    stop("The topic model object and document-term matrix contain an unequal number of documents.")
+  }
+
   UseMethod("dist_from_corpus")
 }
 #' @export
