@@ -177,11 +177,11 @@ the associated diagnostic values</p>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"AssociatedPress"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"topicmodels"</span>)
 <span class='no'>lda</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/topicmodels/man/lda.html'>LDA</a></span>(<span class='no'>AssociatedPress</span>[<span class='fl'>1</span>:<span class='fl'>20</span>,], <span class='kw'>control</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.1</span>), <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>2</span>)
 <span class='fu'>topic_diagnostics</span>(<span class='no'>lda</span>, <span class='no'>AssociatedPress</span>[<span class='fl'>1</span>:<span class='fl'>20</span>,])</div><div class='output co'>#&gt;   topic_num topic_size mean_token_length dist_from_corpus tf_df_dist
-#&gt; 1         1   5186.445               5.3        0.4579794   5.374729
-#&gt; 2         2   5286.555               6.1        0.4443770   5.038643
+#&gt; 1         1   5276.936               4.6        0.4286926   5.571701
+#&gt; 2         2   5196.064               6.6        0.4634688   4.454824
 #&gt;   doc_prominence topic_coherence topic_exclusivity
-#&gt; 1             12      -46.731878          8.849768
-#&gt; 2              8       -5.076564          9.707435</div></pre>
+#&gt; 1             10       -32.46026          8.844863
+#&gt; 2             10       -30.33530          8.879705</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
