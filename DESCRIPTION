@@ -8,7 +8,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "doug.nhp@gmail.com")
 Description: Calculates topic specific diagnostics (e.g. mean token size, exclusivity) for 
-    Latent Dirichelet Allocation and Correlated Topic Models fit using the topicmodels package
+    Latent Dirichelet Allocation and Correlated Topic Models fit using the topicmodels package.
+    These diagnostics originate from Boyd-Graber et al. (2014, ISBN:9781466504080), 
+    Mimno et al. (2011, ISBN:9781937284114), and Bischof et al. (2014) <arXiv:1206.4631v1>.
 License: MIT + file LICENSE
 URL: https://github.com/doug-friedman/topicdoc
 BugReports: https://github.com/doug-friedman/topicdoc/issues
