@@ -1,13 +1,13 @@
 Type: Package
 Package: topicdoc
-Title: An R Package for Calculating Topic Model Diagnostics 
+Title: Topic-specific diagnostics for LDA and CTM topic models
 Version: 0.1.0
 Authors@R: 
     person(given = "Doug",
            family = "Friedman",
            role = c("aut", "cre"),
            email = "doug.nhp@gmail.com")
-Description: Calculates topic specific diagnostics (e.g. mean token size, exclusivity) for 
+Description: Calculates topic-specific diagnostics (e.g. mean token length, exclusivity) for 
     Latent Dirichelet Allocation and Correlated Topic Models fit using the topicmodels package.
     These diagnostics originate from Boyd-Graber et al. (2014, ISBN:9781466504080), 
     Mimno et al. (2011, ISBN:9781937284114), and Bischof et al. (2014) <arXiv:1206.4631v1>.
