@@ -8,3 +8,8 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Updated the package description in the DESCRIPTION file to have more details about the type of metrics included and type of topic models supported.

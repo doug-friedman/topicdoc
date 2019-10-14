@@ -7,8 +7,8 @@ Authors@R:
            family = "Friedman",
            role = c("aut", "cre"),
            email = "doug.nhp@gmail.com")
-Description: This R package provides functionality to calculate
-    various diagnostics for different types of topic models.
+Description: Calculates topic specific diagnostics (e.g. mean token size, exclusivity) for 
+    Latent Dirichelet Allocation and Correlated Topic Models fit using the topicmodels package
 License: MIT + file LICENSE
 URL: https://github.com/doug-friedman/topicdoc
 BugReports: https://github.com/doug-friedman/topicdoc/issues
