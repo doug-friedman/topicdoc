@@ -1,6 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* I fixed a typo in the package description in the DESCRIPTION file.
 * I have single quoted the software in the package description in the DESCRIPTION file.
 * I have made the title title-case in the DESCRIPTION file.
 * Updated the package description in the DESCRIPTION file to have more details about the type of metrics included and type of topic models supported.
