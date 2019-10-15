@@ -1,6 +1,6 @@
 Type: Package
 Package: topicdoc
-Title: Topic-specific diagnostics for LDA and CTM topic models
+Title: Topic-Specific Diagnostics for LDA and CTM Topic Models
 Version: 0.1.0
 Authors@R: 
     person(given = "Doug",

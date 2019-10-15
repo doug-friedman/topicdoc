@@ -1,6 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* I have made the title title-case in the DESCRIPTION file.
 * Updated the package description in the DESCRIPTION file to have more details about the type of metrics included and type of topic models supported.
 * Added explicit references to the originating papers in in the package description in the DESCRIPTION file
 * Simplified the title in the DESCRIPTION file
