@@ -15,6 +15,8 @@ status](https://ci.appveyor.com/api/projects/status/github/doug-friedman/topicdo
 coverage](https://codecov.io/gh/doug-friedman/topicdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/doug-friedman/topicdoc?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/topicdoc)](https://CRAN.R-project.org/package=topicdoc)
+[![cran
+checks](https://cranchecks.info/badges/summary/topicdoc)](https://cran.r-project.org/web/checks/check_results_topicdoc.html)  
 <!-- badges: end -->
 
 Like a (good) doctor, the goal of topicdoc is to help diagnose issues
