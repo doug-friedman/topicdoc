@@ -29,6 +29,12 @@ supported. However, I’m targeting those from the `stm` library next.
 
 ## Installation
 
+You can install the CRAN version of topicdoc with:
+
+``` r
+install.packages("topicdoc")
+```
+
 You can install the development version of topicdoc from
 [Github](https://www.github.com/doug-friedman/topicdoc) with:
 
