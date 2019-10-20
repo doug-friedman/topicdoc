@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
 [![AppVeyor build
@@ -128,8 +128,7 @@ and exclusivity confirm our susipicion about the generic nature of the
 topic.
 
 Alternatively, you can see that Topic 2 - the one centered around
-financial news - is the most coherent and exclusive
-topic.
+financial news - is the most coherent and exclusive topic.
 
 ## Diagnostics/Metrics Included
 
