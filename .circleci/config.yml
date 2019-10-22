@@ -12,6 +12,10 @@ jobs:
             - r-pkg-cache--
       - checkout
       - run:
+          name: Install system dependencies
+          command: |
+            sudo apt-get install libgsl-dev
+      - run:
           name: Install package dependencies
           command: |
             mkdir -p ~/R/Library
