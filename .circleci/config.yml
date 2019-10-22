@@ -11,7 +11,11 @@ jobs:
             - r-pkg-cache--
             - r-pkg-cache--
       - checkout
-      - run: sudo apt-get install libgsl-dev
+      - run:
+          name: Install system dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install libgsl0-dev
       - run:
           name: Install package dependencies
           command: |
