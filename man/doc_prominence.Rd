@@ -4,8 +4,11 @@
 \alias{doc_prominence}
 \title{Calculate the document prominence of each topic in a topic model}
 \usage{
-doc_prominence(topic_model, method = c("gamma_threshold",
-  "largest_gamma"), gamma_threshold = 0.2)
+doc_prominence(
+  topic_model,
+  method = c("gamma_threshold", "largest_gamma"),
+  gamma_threshold = 0.2
+)
 }
 \arguments{
 \item{topic_model}{a fitted topic model object from one of the following:

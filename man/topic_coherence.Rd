@@ -4,8 +4,7 @@
 \alias{topic_coherence}
 \title{Calculate the topic coherence for each topic in a topic model}
 \usage{
-topic_coherence(topic_model, dtm_data, top_n_tokens = 10,
-  smoothing_beta = 1)
+topic_coherence(topic_model, dtm_data, top_n_tokens = 10, smoothing_beta = 1)
 }
 \arguments{
 \item{topic_model}{a fitted topic model object from one of the following:
