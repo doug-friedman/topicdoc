@@ -19,6 +19,7 @@ status](https://ci.appveyor.com/api/projects/status/github/doug-friedman/topicdo
 status](https://circleci.com/gh/doug-friedman/topicdoc.svg?style=svg)](https://circleci.com/gh/doug-friedman/topicdoc)
 [![Codecov test
 coverage](https://codecov.io/gh/doug-friedman/topicdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/doug-friedman/topicdoc?branch=master)
+[![R-CMD-check](https://github.com/doug-friedman/topicdoc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/doug-friedman/topicdoc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Like a (good) doctor, the goal of topicdoc is to help diagnose issues
@@ -135,7 +136,7 @@ financial news - is the most coherent and exclusive topic.
 ## Diagnostics/Metrics Included
 
 |                Diagnostic/Metric                |      Function       |                                      Description                                       |
-| :---------------------------------------------: | :-----------------: | :------------------------------------------------------------------------------------: |
+|:-----------------------------------------------:|:-------------------:|:--------------------------------------------------------------------------------------:|
 |                   topic size                    |    `topic_size`     |                      Total (weighted) number of tokens per topic                       |
 |                mean token length                | `mean_token_length` |               Average number of characters for the top tokens per topic                |
 |        distance from corpus distribution        | `dist_from_corpus`  |  Distance of a topic’s token distribution from the overall corpus token distribution   |
@@ -149,9 +150,9 @@ financial news - is the most coherent and exclusive topic.
 The following documents provide key references for the
 diagnostics/metrics included in the package.
 
-  - [Jordan Boyd-Graber, David Mimno, and David Newman, 2014. Care and
+-   [Jordan Boyd-Graber, David Mimno, and David Newman, 2014. Care and
     Feeding of Topic Models: Problems, Diagnostics, and Improvements.
     CRC Handbooks of Modern Statistical Methods. CRC Press, Boca Raton,
     Florida.](http://www.people.fas.harvard.edu/~airoldi/pub/books/b02.AiroldiBleiEroshevaFienberg2014HandbookMMM/Ch12_MMM2014.pdf)
-  - [MALLET Topic Model
+-   [MALLET Topic Model
     Diagnostics](http://mallet.cs.umass.edu/diagnostics.php)
