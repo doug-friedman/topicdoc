@@ -1,22 +1,19 @@
-## Resubmission
-This is a resubmission. In this version I have:
+## Submission notes
+This is a minor patch to v0.1 addressing the two below CRAN NOTEs.
+* 'LazyData' is specified without a 'data' directory
+* Undeclared package ‘stm’ in Rd xrefs
 
-* I fixed a typo in the package description in the DESCRIPTION file.
-* I have single quoted the software in the package description in the DESCRIPTION file.
-* I have made the title title-case in the DESCRIPTION file.
-* Updated the package description in the DESCRIPTION file to have more details about the type of metrics included and type of topic models supported.
-* Added explicit references to the originating papers in in the package description in the DESCRIPTION file
-* Simplified the title in the DESCRIPTION file
 
 ## Test environments
-* local OS X install, R 3.6.1
-* ubuntu 14.04 (on travis-ci), R 3.6.1
-* win-builder (devel and release)
+* local Windows 10, R 4.2.1
+* macOS 11.6.7 (via Github actions) release
+* ubuntu 20.04.4 (via Github actions), devel and release
+* Microsoft Windows Server 2022 (via Github actions), release 
+
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors v | 0 warnings v | 0 notes v
 
-* This is a new release.
-
+R CMD check succeeded
 
