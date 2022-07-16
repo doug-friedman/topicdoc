@@ -13,8 +13,6 @@ status](https://www.r-pkg.org/badges/version/topicdoc)](https://CRAN.R-project.o
 checks](https://cranchecks.info/badges/summary/topicdoc)](https://cran.r-project.org/web/checks/check_results_topicdoc.html)
 [![Travis build
 status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/doug-friedman/topicdoc?branch=master&svg=true)](https://ci.appveyor.com/project/doug-friedman/topicdoc)
 [![CircleCI build
 status](https://circleci.com/gh/doug-friedman/topicdoc.svg?style=svg)](https://circleci.com/gh/doug-friedman/topicdoc)
 [![Codecov test
