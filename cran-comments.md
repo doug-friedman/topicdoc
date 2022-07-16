@@ -1,7 +1,5 @@
-## Submission notes
-This is a minor patch to v0.1 addressing the two below CRAN NOTEs.
-* 'LazyData' is specified without a 'data' directory
-* Undeclared package ‘stm’ in Rd xrefs
+## Resubmission
+This is a resubmission. In this version I have addressed the URL issues in the documentation.
 
 
 ## Test environments
