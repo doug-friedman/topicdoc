@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/topicdoc)](https://CRAN.R-project.org/package=topicdoc)
 [![cran
@@ -14,9 +14,9 @@ checks](https://cranchecks.info/badges/summary/topicdoc)](https://cran.r-project
 [![Travis build
 status](https://travis-ci.org/doug-friedman/topicdoc.svg?branch=master)](https://travis-ci.org/doug-friedman/topicdoc)
 [![CircleCI build
-status](https://circleci.com/gh/doug-friedman/topicdoc.svg?style=svg)](https://circleci.com/gh/doug-friedman/topicdoc)
+status](https://circleci.com/gh/doug-friedman/topicdoc.svg?style=svg)](https://app.circleci.com/pipelines/github/doug-friedman/topicdoc)
 [![Codecov test
-coverage](https://codecov.io/gh/doug-friedman/topicdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/doug-friedman/topicdoc?branch=master)
+coverage](https://codecov.io/gh/doug-friedman/topicdoc/branch/master/graph/badge.svg)](https://app.codecov.io/gh/doug-friedman/topicdoc?branch=master)
 [![R-CMD-check](https://github.com/doug-friedman/topicdoc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/doug-friedman/topicdoc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -39,7 +39,7 @@ install.packages("topicdoc")
 ```
 
 You can install the development version of topicdoc from
-[Github](https://www.github.com/doug-friedman/topicdoc) with:
+[Github](https://github.com/doug-friedman/topicdoc) with:
 
 ``` r
 remotes::install_github("doug-friedman/topicdoc")
@@ -153,4 +153,4 @@ diagnostics/metrics included in the package.
     CRC Handbooks of Modern Statistical Methods. CRC Press, Boca Raton,
     Florida.](http://www.people.fas.harvard.edu/~airoldi/pub/books/b02.AiroldiBleiEroshevaFienberg2014HandbookMMM/Ch12_MMM2014.pdf)
 -   [MALLET Topic Model
-    Diagnostics](http://mallet.cs.umass.edu/diagnostics.php)
+    Diagnostics](https://mallet.cs.umass.edu/diagnostics.php)

@@ -21,7 +21,7 @@
 #'   Computational Linguistics. Chicago
 #'
 #'   McCallum, Andrew Kachites.  "MALLET: A Machine Learning for Language Toolkit."
-#'   \url{http://mallet.cs.umass.edu.} 2002.
+#'   \url{https://mallet.cs.umass.edu} 2002.
 #' }
 #'
 #' @seealso \code{\link[stm]{semanticCoherence}}
