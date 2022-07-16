@@ -12,3 +12,4 @@
 ^CRAN-RELEASE$
 ^\.circleci/config\.yml$
 ^\.github$
+^CRAN-SUBMISSION$
