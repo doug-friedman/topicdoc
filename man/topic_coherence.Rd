@@ -4,8 +4,7 @@
 \alias{topic_coherence}
 \title{Calculate the topic coherence for each topic in a topic model}
 \usage{
-topic_coherence(topic_model, dtm_data, top_n_tokens = 10,
-  smoothing_beta = 1)
+topic_coherence(topic_model, dtm_data, top_n_tokens = 10, smoothing_beta = 1)
 }
 \arguments{
 \item{topic_model}{a fitted topic model object from one of the following:
@@ -42,7 +41,7 @@ topic_coherence(lda, AssociatedPress[1:20,])
   Computational Linguistics. Chicago
 
   McCallum, Andrew Kachites.  "MALLET: A Machine Learning for Language Toolkit."
-  \url{http://mallet.cs.umass.edu.} 2002.
+  \url{https://mallet.cs.umass.edu} 2002.
 }
 }
 \seealso{
