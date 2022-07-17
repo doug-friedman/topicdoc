@@ -69,6 +69,8 @@ topic_coherence.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10,
 #'
 #' @importFrom slam tcrossprod_simple_triplet_matrix
 #'
+#' @keywords internal
+#'
 #' @return a numeric indicating coherence for the topic
 
 coherence <- function(dtm_data, top_terms, smoothing_beta){
