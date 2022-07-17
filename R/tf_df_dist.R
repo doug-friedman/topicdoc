@@ -61,6 +61,8 @@ tf_df_dist.TopicModel <- function(topic_model, dtm_data, top_n_tokens = 10){
 #'
 #' @importFrom slam col_sums
 #'
+#' @keywords internal
+#'
 #' @return a single value representing the Hellinger distance
 
 tf_df_dist_diff <- function(dtm_data, top_terms){

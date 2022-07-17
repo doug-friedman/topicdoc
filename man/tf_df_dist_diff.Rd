@@ -21,3 +21,4 @@ Helper function to calculate the Hellinger distance
 between the token frequencies and document frequencies
 for a specific topic's top N tokens
 }
+\keyword{internal}
