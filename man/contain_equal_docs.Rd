@@ -18,3 +18,4 @@ a logical indicating whether or not the two object contain the same number of do
 \description{
 Helper function to check that a topic model and a dtm contain the same number of documents
 }
+\keyword{internal}

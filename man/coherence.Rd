@@ -20,3 +20,4 @@ a numeric indicating coherence for the topic
 \description{
 Helper function for calculating coherence for a single topic's worth of terms
 }
+\keyword{internal}

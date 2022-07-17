@@ -16,3 +16,4 @@ an integer indicating the number of topics in the topic model
 \description{
 Helper function to determine the number of topics in a topic model
 }
+\keyword{internal}
