@@ -62,7 +62,7 @@ topic_diagnostics <- function(topic_model, dtm_data, top_n_tokens = 10,
 #' @param topic_model a fitted topic model object from one of the following:
 #' \code{\link[topicmodels]{tm-class}}
 #'
-#' @keyword internal
+#' @keywords internal
 #'
 #' @return an integer indicating the number of topics in the topic model
 
@@ -78,7 +78,7 @@ n_topics <- function(topic_model){
 #' \code{\link[topicmodels]{tm-class}}
 #' @param dtm_data a document-term matrix of token counts coercible to \code{simple_triplet_matrix}
 #'
-#' @keyword internal
+#' @keywords internal
 #'
 #' @return a logical indicating whether or not the two object contain the same number of documents
 
